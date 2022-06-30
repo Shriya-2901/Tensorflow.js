@@ -31,10 +31,10 @@ return arr.map((x,i)=>[x,i]).reduce((a,b)=>a[0]>b[0]?a:b)[1];
   return (
     <div className="App">
       <header className="App-header">
-        <p>Made usinng a pre-trained model</p>
+        <p>Made using a pre-trained model</p>
         <p>Try saying-'down', 'eight', 'five', 'four', 'go', 'left', 'nine', 'no', 'one', 'right', 'seven', 'six', 'stop', 'three', 'two', 'up', 'yes', 'zero'</p>
        <button onClick={recognizeCommands}>Recognize Commands</button>
-       {action&&<h1>{action}</h1>}
+       {action?<h1>{action}</h1>:<h1>Not Found</h1>}
       </header>
     </div>
   );
