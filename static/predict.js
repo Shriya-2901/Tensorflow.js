@@ -1,6 +1,8 @@
+
 $("#image-selector").change(function(){
     let reader= new FileReader();
     reader.onload=function(){
+        console.log('image loaded')
         let dataURL=reader.result;
         $("#selected-image").attr("src",dataURL);
         $("#prediction-list").empty();
@@ -11,8 +13,8 @@ reader.readAsDataURL(file);
 
 let model;
 (async function(){
-    console.log('Hello');
-    model=await tf.loadModel('http://127.0.0.1:8080/tfjs-models/VGG16/model.json');
+    
+     model=await tf.loadModel('http://127.0.0.1:8080/tfjs-models/VGG16/model.json');
     $(".progress-bar").hide();
 })();
 
